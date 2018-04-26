@@ -7,7 +7,7 @@
 
 
     <ImageView
-        android:id="@+id/imgFilme"
+        android:id="@+id/img_filme"
         android:layout_width="75dp"
         android:layout_height="100dp"
         android:layout_marginRight="16dp"
@@ -15,41 +15,41 @@
         app:srcCompat="@drawable/deixe_luz_do_sol_entrar"/>
 
     <TextView
-        android:id="@+id/nomeFilme_textView"
+        android:id="@+id/nome_filme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@id/imgFilme"
+        android:layout_toRightOf="@id/img_filme"
         android:text="Nome do Filme"
         android:textAllCaps="true"
         android:textSize="20dp"
         />
 
     <TextView
-        android:id="@+id/genero_textView"
+        android:id="@+id/genero_filme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/nomeFilme_textView"
+        android:layout_below="@id/nome_filme"
         android:layout_marginTop="8dp"
-        android:layout_toRightOf="@id/imgFilme"
+        android:layout_toRightOf="@id/img_filme"
         android:text="Genero"
 
         />
 
     <TextView
-        android:id="@+id/duracao_textView"
+        android:id="@+id/duracao_filme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/genero_textView"
-        android:layout_toRightOf="@id/imgFilme"
+        android:layout_below="@id/genero_filme"
+        android:layout_toRightOf="@id/img_filme"
         android:text="Duração"
         />
 
     <TextView
-        android:id="@+id/classificacao_textView"
+        android:id="@+id/classificacao_filme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/imgFilme"
+        android:layout_alignBottom="@id/img_filme"
         android:layout_alignParentRight="true"
         android:background="@color/colorAccent"
         android:text="12"

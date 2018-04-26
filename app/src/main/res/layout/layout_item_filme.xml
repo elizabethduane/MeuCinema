@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp">
+
+
+    <ImageView
+        android:id="@+id/imgFilme"
+        android:layout_width="75dp"
+        android:layout_height="100dp"
+        android:layout_marginRight="16dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/deixe_luz_do_sol_entrar"/>
+
+    <TextView
+        android:id="@+id/nomeFilme_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/imgFilme"
+        android:text="Nome do Filme"
+        android:textAllCaps="true"
+        android:textSize="20dp"
+        />
+
+    <TextView
+        android:id="@+id/genero_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nomeFilme_textView"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/imgFilme"
+        android:text="Genero"
+
+        />
+
+    <TextView
+        android:id="@+id/duracao_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/genero_textView"
+        android:layout_toRightOf="@id/imgFilme"
+        android:text="Duração"
+        />
+
+    <TextView
+        android:id="@+id/classificacao_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/imgFilme"
+        android:layout_alignParentRight="true"
+        android:background="@color/colorAccent"
+        android:text="12"
+        />
+</RelativeLayout>

@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="16dp">
+    android:layout_margin="8dp"
+    android:background="#FFFFFF"
+    android:padding="8dp">
 
 
     <ImageView
@@ -12,7 +14,7 @@
         android:layout_height="100dp"
         android:layout_marginRight="16dp"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/deixe_luz_do_sol_entrar"/>
+        app:srcCompat="@drawable/deixe_luz"/>
 
     <TextView
         android:id="@+id/nome_filme"
@@ -22,8 +24,9 @@
         android:layout_toRightOf="@id/img_filme"
         android:text="Nome do Filme"
         android:textAllCaps="true"
-        android:textSize="20dp"
-        />
+        android:textColor="@color/color18"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/genero_filme"
@@ -34,7 +37,8 @@
         android:layout_toRightOf="@id/img_filme"
         android:text="Genero"
 
-        />
+        android:textColor="@color/color16"
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/duracao_filme"
@@ -42,16 +46,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/genero_filme"
         android:layout_toRightOf="@id/img_filme"
+        android:layout_marginTop="8dp"
         android:text="Duração"
-        />
+        android:textSize="14sp"
+        android:textStyle="italic"/>
 
-    <TextView
-        android:id="@+id/classificacao_filme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/img_filme"
-        android:layout_alignParentRight="true"
-        android:background="@color/colorAccent"
-        android:text="12"
-        />
+
 </RelativeLayout>

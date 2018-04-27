@@ -14,7 +14,7 @@
         android:fontFamily="@font/alegreya_sans_sc_medium"
         android:text="@string/em_cartaz"
         android:textAllCaps="true"
-        android:textSize="18sp"
+        android:textSize="20sp"
         />
 
     <ListView

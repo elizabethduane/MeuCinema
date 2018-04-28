@@ -45,7 +45,7 @@ public class FilmeAdapter extends ArrayAdapter<Filme>{
                     R.layout.item_filme, parent, false);
         }
 
-        // Get the {@link Filme} object located at this position in the list
+        // Obtem o objeto atual de do ArrayList Filme
         Filme filmeAtual = getItem(position);
 
         // Identifica a TextView no layout item_filme.xml cuja  a ID  é nome_filme

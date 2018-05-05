@@ -9,7 +9,7 @@
 
 
     <ImageView
-        android:id="@+id/img_filme"
+        android:id="@+id/banner_filme"
         android:layout_width="74dp"
         android:layout_height="100dp"
         android:layout_marginRight="16dp"
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@id/img_filme"
+        android:layout_toRightOf="@id/banner_filme"
         android:text="Nome do Filme"
         android:textAllCaps="true"
         android:textColor="@color/color18"
@@ -33,8 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/nome_filme"
-        android:layout_marginTop="8dp"
-        android:layout_toRightOf="@id/img_filme"
+        android:layout_toRightOf="@id/banner_filme"
         android:text="Genero"
         android:textColor="@color/color16"
         android:textSize="14sp" />
@@ -44,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/genero_filme"
-        android:layout_toRightOf="@id/img_filme"
+        android:layout_toRightOf="@id/banner_filme"
         android:layout_marginTop="8dp"
         android:text="Duração"
         android:textSize="14sp"
@@ -54,7 +53,7 @@
         android:id="@+id/classificacao_filme"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_alignBottom="@id/img_filme"
+        android:layout_alignBottom="@id/banner_filme"
         android:layout_alignParentRight="true"
         android:scaleType="fitXY"
         android:src="@drawable/_livre"

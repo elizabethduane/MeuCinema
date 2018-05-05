@@ -75,7 +75,7 @@ public class FilmeAdapter extends ArrayAdapter<Filme>{
 
 
         // Find the ImageView in the list_item.xml layout with the ID list_item_icon
-        ImageView iconView = (ImageView) listFilmeView.findViewById(R.id.img_filme);
+        ImageView iconView = (ImageView) listFilmeView.findViewById(R.id.banner_filme);
         // Get the image resource ID from the current AndroidFlavor object and
         // set the image to iconView
         iconView.setImageResource(filmeAtual.getImgResourceId());

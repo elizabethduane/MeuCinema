@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InfoActivity">
+
+    <ImageView
+        android:id="@+id/banner_filme"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher" />
+
+
+
+            <TextView
+                android:id="@+id/nome_filme"
+                android:layout_width="350dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/banner_filme"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Nome do Filme"
+                android:textAllCaps="true"
+                android:textColor="@color/color18"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                />
+
+    <ImageView
+        android:id="@+id/classificacao_filme"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/banner_filme"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/genero_filme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nome_filme"
+        android:layout_marginLeft="8dp"
+        android:text="Genero"
+        android:textColor="@color/color16"
+
+        android:textSize="14sp"/>
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/genero_filme"
+        android:layout_margin="8dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <TextView
+                android:id="@+id/tag_elenco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Elenco: "
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/texto_elenco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tag_elenco"
+
+                />
+
+            <TextView
+                android:id="@+id/tag_direcao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/texto_elenco"
+                android:text="Direção: "
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/texto_direcao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/texto_elenco"
+                android:layout_marginRight="16dp"
+                android:layout_toRightOf="@id/tag_direcao"
+                />
+
+            <TextView
+                android:id="@+id/tag_duracao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tag_direcao"
+                android:text="Duração: "
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/texto_duracao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tag_direcao"
+                android:layout_marginRight="16dp"
+                android:layout_toRightOf="@id/tag_duracao"
+                />
+
+            <TextView
+                android:id="@+id/sinopse_filme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tag_duracao"
+                android:layout_marginTop="16dp"
+                />
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+
+</RelativeLayout>

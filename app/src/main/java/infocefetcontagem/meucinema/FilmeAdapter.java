@@ -64,7 +64,7 @@ public class FilmeAdapter extends ArrayAdapter<Filme>{
         TextView duracaoTextView = (TextView) listFilmeView.findViewById(R.id.duracao_filme);
         // Recupera a duracao do filme relacionado ao objeto filmeAtual, concatena com o texto "min."
         // e atribuiu o texto na TextView duracao
-        String duracao = filmeAtual.getDuracao() + " min.";
+        String duracao = filmeAtual.getDuracao() + "  min.";
         duracaoTextView.setText(duracao);
 
         // Identifica a ImageView no layout item_filme.xml cuja  a ID  é classificacao_filme
@@ -75,7 +75,7 @@ public class FilmeAdapter extends ArrayAdapter<Filme>{
 
 
         // Find the ImageView in the list_item.xml layout with the ID list_item_icon
-        ImageView iconView = (ImageView) listFilmeView.findViewById(R.id.banner_filme);
+        ImageView iconView = (ImageView) listFilmeView.findViewById(R.id.img_filme);
         // Get the image resource ID from the current AndroidFlavor object and
         // set the image to iconView
         iconView.setImageResource(filmeAtual.getImgResourceId());

@@ -18,10 +18,11 @@
         />
 
     <ListView
-        android:id="@+id/grid_filme"
+        android:id="@+id/list_filme"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:numColumns="2"/>
+        android:divider="@android:color/transparent"
+        android:dividerHeight="8dp" />
 
 
 </LinearLayout>

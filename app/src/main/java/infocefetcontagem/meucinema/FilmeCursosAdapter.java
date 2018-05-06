@@ -9,13 +9,15 @@ import android.widget.CursorAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import infocefetcontagem.meucinema.CinemaContract.FilmeTable;
+import infocefetcontagem.meucinema.dados.CinemaContract.FilmeTable;
 
 public class FilmeCursosAdapter extends CursorAdapter {
 
     public FilmeCursosAdapter(Context context, Cursor c){
+
         super(context,c,0);
     }
+
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
 

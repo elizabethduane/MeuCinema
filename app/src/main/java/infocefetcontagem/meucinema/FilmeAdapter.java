@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import infocefetcontagem.meucinema.dados.Filme;
+
 public class FilmeAdapter extends ArrayAdapter<Filme>{
 
     /**

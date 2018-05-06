@@ -1,9 +1,16 @@
 package infocefetcontagem.meucinema;
 
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import infocefetcontagem.meucinema.dados.CinemaContract.FilmeTable;
+import infocefetcontagem.meucinema.dados.CinemaDbHelper;
 
 public class InfoActivity extends AppCompatActivity {
 
@@ -12,8 +19,29 @@ public class InfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
+        //muda o título da Activity
+        this.setTitle("FILME");
 
-        Filme atual = (Filme) getIntent().getSerializableExtra("dadosFilme");
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+
+        //verifica se recebeu o objeto de filme
+        if (bundle != null){
+
+            //To edit
+            String idFilme = bundle.get("id").toString();
+            carregaDados(idFilme);
+
+
+        }else{
+
+            //finaliza a Intent
+            this.finish();
+        }
+    }
+
+
+    void carregaDados(String idFilme){
 
         TextView nomeTextView = (TextView)findViewById(R.id.nome_filme);
         TextView generoFilme = (TextView) findViewById(R.id.genero_filme);
@@ -24,27 +52,57 @@ public class InfoActivity extends AppCompatActivity {
         ImageView bannerImageView = (ImageView)findViewById(R.id.banner_filme);
         ImageView classificacaoImageView = (ImageView)findViewById(R.id.classificacao_filme);
 
-        //verifica se recebeu o objeto de filme
-        if (atual != null){
 
-            //muda o título da Activity
-            this.setTitle("FILME");
+        CinemaDbHelper dbHelper = new CinemaDbHelper(this);
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-            //atribuiu os valores para cada view
-            nomeTextView.setText(atual.getNome());
-            generoFilme.setText(atual.getGenero());
-            elencoTextView.setText(atual.getElenco());
-            direcaoTextView.setText(atual.getDirecao());
-            duracaoTextView.setText(atual.getDuracao()+ " min");
-            sinopseTextView.setText(atual.getSinopse());
-            bannerImageView.setImageResource(atual.getImgBanner());
-            classificacaoImageView.setImageResource(atual.getImgClassificacao());
+        String columns[] = {
+                FilmeTable.COLUMN_NOME,
+                FilmeTable.COLUMN_GENERO,
+                FilmeTable.COLUMN_ELENCO,
+                FilmeTable.COLUMN_DIRECAO,
+                FilmeTable.COLUMN_DURACAO,
+                FilmeTable.COLUMN_SINOPSE,
+                FilmeTable.COLUMN_BANNER,
+                FilmeTable.COLUMN_CLASSIFICACAO
+        };
 
+        String whereClause = FilmeTable._ID + "=" + idFilme;
+
+        Cursor cursor = db.query(FilmeTable.TABLE_NAME,columns,whereClause,null,null,null,null);
+
+        if(cursor != null){
+
+            cursor.moveToFirst();
+
+            //busca o valor de resposta da query e atribuiu os valores para cada view
+
+            String aux = cursor.getString(cursor.getColumnIndexOrThrow(FilmeTable.COLUMN_NOME));
+            nomeTextView.setText(aux);
+
+            aux = cursor.getString(cursor.getColumnIndexOrThrow(FilmeTable.COLUMN_GENERO));
+            generoFilme.setText(aux);
+
+            aux = cursor.getString(cursor.getColumnIndexOrThrow(FilmeTable.COLUMN_ELENCO));
+            elencoTextView.setText(aux);
+
+            aux = cursor.getString(cursor.getColumnIndexOrThrow(FilmeTable.COLUMN_DIRECAO));
+            direcaoTextView.setText(aux);
+
+            int duracao  = cursor.getInt(cursor.getColumnIndexOrThrow(FilmeTable.COLUMN_DURACAO));
+            duracaoTextView.setText(duracao + " min.");
+
+            aux = cursor.getString(cursor.getColumnIndexOrThrow(FilmeTable.COLUMN_SINOPSE));
+            sinopseTextView.setText(aux);
+
+            int imgAux = cursor.getInt(cursor.getColumnIndexOrThrow(FilmeTable.COLUMN_BANNER));
+            bannerImageView.setImageResource(imgAux);
+
+            imgAux = cursor.getInt(cursor.getColumnIndexOrThrow(FilmeTable.COLUMN_CLASSIFICACAO));
+            classificacaoImageView.setImageResource(imgAux);
 
         }else{
-
-            //finaliza a Intent
-            this.finish();
+            Toast.makeText(this, "Erro ao abrir informações do filme.", Toast.LENGTH_SHORT).show();
         }
     }
 }
